@@ -1,13 +1,13 @@
 ---
 name: explore-plan
-description: Interrogate a plan or design round by round until nothing is silently assumed. Use when the user says "grill me on this", "poke holes in this plan", "what am I missing", "stress-test this design", or hands over a plan they want sharpened before building. Asks the answerable questions in rounds, always with a recommendation, and researches facts itself instead of delegating them back to the user.
-disable-model-invocation: true
+description: Interrogate a plan round by round until nothing is silently assumed — building it from scratch if there isn't one yet. Closes with the decisions settled and the assumptions still open: the groundwork before planning, not the plan itself. Use when the user says "crea un plan", "haz un plan", "planifica esto", "create a plan", "make a plan", "plan this out", "grill me on this", "poke holes in this plan", "what am I missing", or hands over a plan to sharpen before building. Not for a one-line ask or a trivial change. Asks the answerable questions in rounds, always with a recommendation, and researches facts itself instead of delegating them back to the user.
 ---
 
 # Explore a plan
 
-Interrogate the user's plan until no assumptions are left hidden. Do not implement
-anything.
+Interrogate the plan until no assumptions are left hidden — and if there is no plan yet,
+the rounds are how it gets built. Same frontier, same format: you're filling an empty tree
+instead of auditing a full one. Do not implement anything.
 
 Every decision opens the decisions that hang off it. The **frontier** is the set of
 decisions whose prerequisites are already settled: ask only those, in rounds, and move
