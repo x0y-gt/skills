@@ -58,6 +58,9 @@ Propose the module/layer shape, justified by principle — not by taste:
 - **Dependencies point inward** (domain → use cases → adapters → infra). No framework,
   ORM, or HTTP type in business logic.
 - **Depend on abstractions** only where a second implementation is real, not imagined.
+- **Functional by default** — pure functions, immutable data, composition over
+  inheritance, declarative `map`/`filter`/`reduce`. Ask once whether this project departs
+  from that; if `CLAUDE.md` already states the paradigm, follow it and don't ask.
 
 Scope was already cut in the plan step — don't relitigate it here. Adapt to the
 ecosystem's idioms (detect from imports and config); don't import another language's
