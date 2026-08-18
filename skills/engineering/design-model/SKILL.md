@@ -78,7 +78,15 @@ A decision earns an ADR only when all three hold:
 2. **Surprising without context** — a future reader will ask "why this way?"
 3. **A real trade-off** — there were genuine alternatives and you picked one.
 
-Miss any one and skip it. List the ones that qualify; don't draft them yet.
+Miss any one and skip it.
+
+**Group them — one ADR per plan is the target.** Decisions taken together, for the same
+reason, in the same session belong in one document. Three ADRs that all come down to
+"because we went event-sourced" are one ADR with three consequences. Split only when a
+decision has a genuinely different lifetime: one could be reversed later without touching
+the other.
+
+List what qualifies, grouped; don't draft anything yet.
 
 ## Close — the proposal
 
@@ -87,8 +95,9 @@ Present, in this order, nothing longer than it needs to be:
 1. **Language** — the settled terms, and the renames the existing code needs to speak
    them. A language isn't ubiquitous until the code uses it.
 2. **Boundaries** — the module sketch.
-3. **To write on confirmation** — the `CLAUDE.md` glossary entries, and the ADRs
-   (`docs/adr/NNNN-slug.md`) worth recording.
+3. **To write on confirmation** — the `CLAUDE.md` glossary entries, and the ADR
+   (`docs/adr/YYMMDD-slug.md`, e.g. `260818-event-sourced-orders.md`) — one, unless two
+   decisions genuinely stand apart.
 4. **Open assumptions.**
 
 Then stop and **wait for explicit confirmation** of shared understanding before
