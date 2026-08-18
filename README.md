@@ -23,6 +23,15 @@ rest after the prototype is signed off — the settled interface defines the dat
 
 ## Install
 
+Symlink the skills into `~/.claude/skills`:
+
 ```bash
-cp -r skills/engineering/* ~/.claude/skills/
+./scripts/link-skills.sh
 ```
+
+Edit any `SKILL.md` and the next session picks it up — no copying, nothing to keep in
+sync. Re-run it after adding a skill or moving the repo.
+
+It refuses to clobber real directories, so stale `cp` copies are reported instead of
+overwritten. Pass `--force` to replace them. Set `CLAUDE_SKILLS_DIR` to link somewhere
+else.
