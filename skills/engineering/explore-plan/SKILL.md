@@ -15,9 +15,9 @@ to the next layer once the user answers.
 
 Format:
 
-❓ **Q[#]** — **<title>**: <options and the real trade-off>
+➡️ **Q[#]** — **<title>**: <options and the real trade-off>
 
-➡️ <your recommendation>
+Recommendation: <your recommendation>
 
 - Always give your recommendation. An interrogation without a stance is a survey.
 - **Finding facts is your job, never the user's.** If a question can be answered by
