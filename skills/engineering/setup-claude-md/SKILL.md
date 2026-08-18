@@ -10,7 +10,9 @@ disable-model-invocation: true
 costs context in every future conversation. Write only what a competent stranger could not
 work out from the code in a minute — and no more.
 
-Short and to the point. **Write nothing** until the user confirms the proposal.
+Short and to the point. **Write nothing.** Not the file, not a draft on disk — nothing,
+until the user says to save it. Approving the content is not the same as asking you to
+save it.
 
 ## Step 1 — Derive first, ask second
 
@@ -30,9 +32,9 @@ don't rewrite the file wholesale.
 
 Ask only what the code can't answer, a round at a time, in `/explore-plan` format:
 
-❓ **Q[#]** — **<title>**: <options and the real trade-off>
+➡️ **Q[#]** — **<title>**: <options and the real trade-off>
 
-➡️ <your recommendation>
+Recommendation: <your recommendation>
 
 Always recommend. Skip anything you already derived — state it as a finding instead.
 
@@ -44,7 +46,7 @@ The questions worth asking, in the order the file will carry them:
 - **Glossary** — only terms the code names inconsistently or ambiguously (`user_id` in the
   DB, `customerId` in the API). A term already consistent everywhere documents itself.
 - **Tech stack** — why these choices, and which architecture patterns are in play (DDD,
-  event-driven, hexagonal, layered)? Versions you derive; the *why* only they know.
+  event-driven, hexagonal, layered)? Versions you derive; the _why_ only they know.
 - **Code style** — **functional by default**: pure functions, immutable data, composition
   over inheritance, declarative `map`/`filter`/`reduce`, small files. Ask only whether this
   project departs from that, and where.
@@ -58,15 +60,31 @@ The questions worth asking, in the order the file will carry them:
   branches first; the repo usually already answers this.
 - **Verification** — how do you know a change works, before claiming it does? The
   stale-build trap, the rebuild step people forget, the check CI runs and you don't.
-- **Boundaries** — *what should never happen here?* The most valuable section and the one
+- **Boundaries** — _what should never happen here?_ The most valuable section and the one
   they haven't thought about. Prompt with the scars: what broke before, what shouldn't be
   touched without asking, what looks safe and isn't.
 - **Issues** — repo and project board where issues go, and the label vocabulary.
   `/to-specs` and `/to-prototype-spec` read this; without it they ask every run.
 
-Stop asking when the answers stop changing what would be written.
+Never run out of questions. Once the section list above is covered, the next round goes
+deeper: contradictions between what they told you and what the code does, rules they
+follow without noticing, sections that read as filler and should be cut. There is always
+another round — ending this is the user's call, not yours.
 
-## Step 3 — Draft it
+## Step 3 — Draft, show, ask again
+
+Every round, in this order:
+
+1. **The sections you touched, in full.** Not diffs, not summaries. Leave the untouched
+   sections out — show the whole file only when the user asks for it.
+2. **What changed** since the last round. One line.
+3. **The next round of questions.**
+
+Then loop. An answer sharpens one section, which usually opens a question about another —
+keep going. Rounds get cheaper as the draft settles; a late round that costs one question
+and changes one line is normal and still worth running.
+
+The shape:
 
 ```markdown
 # <project>
@@ -74,14 +92,23 @@ Stop asking when the answers stop changing what would be written.
 <one line: what this is>
 
 ## Business
+
 ## Glossary
+
 ## Tech Stack
+
 ## Code Style
+
 ## Project Structure
+
 ## Commands
+
 ## Git Workflow
+
 ## Verification
+
 ## Boundaries — never do this
+
 ## Issues
 ```
 
@@ -95,11 +122,13 @@ Rules for the prose:
 - **Never restate the code.** No dependency lists, no file trees deeper than two levels, no
   function inventories. They rot, and the code already says it.
 - **Never duplicate the global `~/.claude/CLAUDE.md`.** Include a project rule only where it
-  *differs* from the global one, and say that it differs.
+  _differs_ from the global one, and say that it differs.
 
-## Step 4 — Propose, then write
+## Step 4 — Save only when told
 
-Show the draft in full, plus a one-line note per section on what you derived vs. what they
-told you — that's where errors hide.
+Write the file **only** when the user explicitly says to save it — "save", "guarda",
+"escríbelo", "write it". Nothing else counts: not "looks good", not "perfect", not
+approving a section, not silence after a draft. Those mean the draft is right so far, and
+the next round starts.
 
-Then **wait for explicit confirmation** before writing the file.
+Until then the draft lives in the conversation only.
