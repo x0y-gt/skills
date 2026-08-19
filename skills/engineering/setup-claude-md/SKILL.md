@@ -49,7 +49,10 @@ The questions worth asking, in the order the file will carry them:
   event-driven, hexagonal, layered)? Versions you derive; the _why_ only they know.
 - **Code style** — **functional by default**: pure functions, immutable data, composition
   over inheritance, declarative `map`/`filter`/`reduce`, small files. Ask only whether this
-  project departs from that, and where.
+  project departs from that, and where. Plus **testing**: what a good test looks like here,
+  which seams are the agreed boundaries, and the anti-patterns they keep seeing. Whatever
+  lands here is what `/review-code`'s Standards axis will enforce, citing it — a testing rule
+  nobody wrote down is a rule nobody checks.
 - **Project structure** — which directories does someone actually need to know about, and
   the one-line purpose of each? Two levels deep, no deeper.
 - **Commands** — which of the scripts you found actually matter day to day? Any command

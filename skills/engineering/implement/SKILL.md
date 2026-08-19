@@ -66,12 +66,17 @@ the subagent can't see it, it only ran its own file.
 Then do what `CLAUDE.md`'s Verification section says. A green typecheck against a stale build
 proves nothing; if there's a rebuild step, run it before believing anything works.
 
+Read the tests the task added, before starting the next one. The agent that wrote them can't
+judge them, and this is the cheapest moment to fix them — nothing depends on them yet. Reject
+an assertion that recomputes the expected value the way the code does, a test reaching into
+internals instead of the agreed seam, or a mock of an internal collaborator.
+
 Red suite? Fix it, or send it back to a fresh subagent with what failed. Never start the next
 task on a red suite.
 
 ## Step 5 — Close
 
-Run `/code-review` on the diff and fix what it finds.
+Run `/review-code` on the diff and fix what it finds.
 
 Then **stop.** Report: what each task changed, what you verified and how, what you left out
 and why.
