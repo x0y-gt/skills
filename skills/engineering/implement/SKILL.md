@@ -56,6 +56,8 @@ Its contract:
   task, not polish.
 - **Out of scope holds**, even when adjacent code is obviously improvable. Report it, don't
   fix it.
+- **Never edit `CLAUDE.md`.** Report what's missing to the coordinator instead. Several
+  agents editing shared docs is how you get conflicting rules.
 - **Typecheck and run its own test file. Never the full suite. Never commit.**
 
 ## Step 4 — Between tasks
@@ -80,6 +82,12 @@ Run `/review-code` on the diff and fix what it finds.
 
 Then **stop.** Report: what each task changed, what you verified and how, what you left out
 and why.
+
+**What `CLAUDE.md` is missing.** Implementation is where the gaps show: a rebuild step you had
+to discover, a term the code now names canonically, a trap worth a Boundaries line. Collect
+them as you hit them — you won't remember at the end — and list them here as proposed lines.
+Write them only if the user says so. If the drift is bigger than a few lines, or there's no
+`CLAUDE.md` at all, say so and let them run `/setup-claude-md`.
 
 **Do not commit.** Not when the tree is clean, not when the tests pass, not when it feels
 finished. The user commits, or says to.
