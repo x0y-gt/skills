@@ -13,7 +13,7 @@ and the *boundaries*.
 what the user confirms at the close.
 
 Design principles here are a **design criterion, not a review**: they decide where the
-seams go. Auditing written code is `/best-practices`, later.
+seams go. Auditing written code is `/code-review`, later.
 
 ## Step 1 — Settle the ubiquitous language
 
