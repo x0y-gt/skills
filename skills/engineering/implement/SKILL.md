@@ -31,6 +31,9 @@ Dependency order, as the epic lists them. **Sequential, one at a time** — vert
 one epic usually touch the same modules, migrations and i18n files, and parallel agents on
 one working tree corrupt each other's work.
 
+If a task needs more than a handful of files and a few red-green cycles, it was cut too big.
+Say so and split it — pushing a fat task through one context is how agents die mid-slice.
+
 **A prototype task runs first and alone.** Its acceptance is the user's sign-off on the
 experience, not tests. Stop the epic there and wait for it.
 
@@ -59,8 +62,24 @@ Its contract:
 - **Never edit `CLAUDE.md`.** Report what's missing to the coordinator instead. Several
   agents editing shared docs is how you get conflicting rules.
 - **Typecheck and run its own test file. Never the full suite. Never commit.**
+- **Return a short report, nothing else.** Its final message is the return value, not a
+  message to a human: files changed, tests added, what it verified, anything out of scope it
+  found, anything missing from `CLAUDE.md`. A few lines, no narration of process.
 
 ## Step 4 — Between tasks
+
+Never take the subagent's word for what happened. `git status` and `git diff` are the truth;
+its report is a hint. Note the changed files after each task, so when one dies you can tell its
+work from the previous task's.
+
+Nothing came back, or the agent died? Look at the diff before deciding:
+
+- **Nothing changed** — respawn the same task. Once. Twice means the task is wrong, not the
+  agent: stop and report.
+- **Partial work** — the dangerous one: a failing test and half an implementation. Either
+  finish it yourself or revert those files and respawn clean. Never start the next task on a
+  half-done one.
+- **Work is complete** and it only failed to report — verify it and move on.
 
 Run the full suite yourself, after each task. That's where you catch task 2 breaking task 1 —
 the subagent can't see it, it only ran its own file.
