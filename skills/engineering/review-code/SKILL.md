@@ -95,7 +95,7 @@ conversation. Then check the diff against it:
 
 Every finding cites the line of the spec it fails.
 
-**Prototype slices are judged differently.** A `/to-prototype-spec` issue lists what is
+**Prototype slices are judged differently.** A `/plan-prototype-tasks` issue lists what is
 deliberately hollow; those stubs are the spec, not a violation of it. Judge the interface and
 the stub contract, nothing else.
 

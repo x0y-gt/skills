@@ -6,14 +6,14 @@ Claude Code skills for taking work from idea to reviewed code.
 
 | Skill | Does | Ends when |
 |---|---|---|
-| `/explore-plan` | Interrogates the plan round by round. Cuts scope (YAGNI, DRY, KISS). | Nothing is silently assumed. |
+| `/explore-idea` | Interrogates the plan round by round. Cuts scope (YAGNI, DRY, KISS). | Nothing is silently assumed. |
 | `/design-model` | Settles the ubiquitous language from the code, draws module boundaries (SRP, dependency direction). | Terms and boundaries agreed. |
-| `/to-prototype-spec` | Epic + one issue: complete UI, skeletal backend, one small PR. **Only if the work has UX/UI.** | Prototype issue created. |
-| `/to-specs` | The remaining slices, spec'd and cut by moment of use. | Issues on the board. |
+| `/plan-prototype-tasks` | Epic + one issue: complete UI, skeletal backend, one small PR. **Only if the work has UX/UI.** | Prototype issue created. |
+| `/plan-tasks` | The remaining slices, spec'd and cut by moment of use. | Issues on the board. |
 | `/implement` | Builds the epic — one subagent per task, sequentially, TDD at the agreed seams. | Tasks done, suite green. |
 | `/review-code` | Reviews the diff on four axes: Standards, Design, Spec, Correctness. | Findings reported per axis. |
 
-Skip `/to-prototype-spec` when there's no interface. Otherwise run it first and spec the
+Skip `/plan-prototype-tasks` when there's no interface. Otherwise run it first and spec the
 rest after the prototype is signed off — the settled interface defines the data contract.
 
 ## Before the pipeline

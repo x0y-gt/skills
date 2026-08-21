@@ -1,10 +1,10 @@
 ---
-name: to-prototype-spec
-description: Spec a prototype-first slice when the work has real UX/UI — a complete interface plus a skeletal backend, in one small PR, meant to be iterated on before the real slices are specced. Use before /to-specs whenever the design touches screens the user will look at, or when the user says "prototype this", "let's see it first", "mock it up". Creates the epic and this one issue, nothing else.
+name: plan-prototype-tasks
+description: Spec a prototype-first slice when the work has real UX/UI — a complete interface plus a skeletal backend, in one small PR, meant to be iterated on before the real slices are specced. Use before /plan-tasks whenever the design touches screens the user will look at, or when the user says "prototype this", "let's see it first", "mock it up". Creates the epic and this one issue, nothing else.
 disable-model-invocation: true
 ---
 
-# Spec a prototype
+# Plan the prototype task
 
 The design is settled and it has real UX/UI. Before speccing the work, spec **one small
 prototype** to iterate the interface on.
@@ -60,7 +60,7 @@ Confirm the scope, then via `gh`: the epic (the moment of use, the outcome, a ch
 with this issue first), plus the prototype issue linked to it. Labels from Step 1, both
 on the board.
 
-**Stop there.** The remaining slices get specced by `/to-specs` once the prototype is
+**Stop there.** The remaining slices get specced by `/plan-tasks` once the prototype is
 signed off — anything written now is a guess about an interface that is about to change.
 Say so in the epic.
 

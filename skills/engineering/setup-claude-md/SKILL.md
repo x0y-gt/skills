@@ -30,7 +30,7 @@ don't rewrite the file wholesale.
 
 ## Step 2 — Interrogate in rounds
 
-Ask only what the code can't answer, a round at a time, in `/explore-plan` format:
+Ask only what the code can't answer, a round at a time, in `/explore-idea` format:
 
 ➡️ **Q[#]** — **<title>**: <options and the real trade-off>
 
@@ -67,7 +67,7 @@ The questions worth asking, in the order the file will carry them:
   they haven't thought about. Prompt with the scars: what broke before, what shouldn't be
   touched without asking, what looks safe and isn't.
 - **Issues** — repo and project board where issues go, and the label vocabulary.
-  `/to-specs` and `/to-prototype-spec` read this; without it they ask every run.
+  `/plan-tasks` and `/plan-prototype-tasks` read this; without it they ask every run.
 
 Never run out of questions. Once the section list above is covered, the next round goes
 deeper: contradictions between what they told you and what the code does, rules they

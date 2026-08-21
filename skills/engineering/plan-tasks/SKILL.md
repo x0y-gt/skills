@@ -1,10 +1,10 @@
 ---
-name: to-specs
-description: Turn a settled design into an epic with spec'd sub-issues in the project's tracker. Use after /explore-plan and /design-model, or when the user says "break this into issues", "create issues for this", "spec this out". Reads CLAUDE.md to find where issues go, synthesizes from the conversation instead of re-interviewing, and cuts every issue as a usable slice rather than a layer.
+name: plan-tasks
+description: Turn a settled design into an epic with spec'd sub-issues in the project's tracker. Use after /explore-idea and /design-model, or when the user says "break this into issues", "create issues for this", "spec this out". Reads CLAUDE.md to find where issues go, synthesizes from the conversation instead of re-interviewing, and cuts every issue as a usable slice rather than a layer.
 disable-model-invocation: true
 ---
 
-# Spec into issues
+# Plan the tasks
 
 The design is settled. Turn it into an epic and its slices. **Synthesize, don't
 interview** — the conversation already happened; if something is genuinely undecided,
@@ -17,7 +17,7 @@ Short and to the point, in what you say and in what you write into the issues.
 ## Step 0 — Does this need a prototype first?
 
 If the work has real UX/UI and no prototype has been signed off yet, stop and use
-`/to-prototype-spec` instead. Speccing slices against an interface that hasn't been seen
+`/plan-prototype-tasks` instead. Speccing slices against an interface that hasn't been seen
 means respeccing them after it changes.
 
 Already have a signed-off prototype? Its stub contract is your starting data contract,

@@ -6,7 +6,7 @@ disable-model-invocation: true
 
 # Implement
 
-The work was already decided — by `/to-specs`, by an issue, or above in the conversation.
+The work was already decided — by `/plan-tasks`, by an issue, or above in the conversation.
 **No interview, no clarifying round, no proposing a different approach.** If a task is
 genuinely wrong, say so in two lines and stop; don't quietly redesign it.
 

@@ -1,6 +1,6 @@
 ---
 name: design-model
-description: Turn an understood problem into a domain model and module boundaries before writing code. Use after the problem is settled (e.g. after /explore-plan) or when the user says "how should we model this", "where do these boundaries go", "let's design this", or is about to start building. Derives the ubiquitous language from the code, stress-tests it with concrete scenarios, draws boundaries using design principles, and proposes ADRs only for hard-to-reverse trade-offs.
+description: Turn an understood problem into a domain model and module boundaries before writing code. Use after the problem is settled (e.g. after /explore-idea) or when the user says "how should we model this", "where do these boundaries go", "let's design this", or is about to start building. Derives the ubiquitous language from the code, stress-tests it with concrete scenarios, draws boundaries using design principles, and proposes ADRs only for hard-to-reverse trade-offs.
 disable-model-invocation: true
 ---
 
